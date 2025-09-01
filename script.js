@@ -13,42 +13,42 @@ const perguntas = [
                 afirmacao: "No início ficou com medo do que essa bosta pode fazer. "
             },
             {
-                texto: "Isso é maravilhoso!",
-                afirmacao: "Quis saber como usar IA no seu dia a dia."
+                texto: "Isso é triste!",
+                afirmacao: "Angelo fica triste com o peixe morto."
             }
         ]
     },
     {
-        enunciado: ". Qual atitude você toma?",
+        enunciado: " Angelo avista um pé de mato de meia altura, folhas pontudas e serrilhadas, e pensou que era uma boa planta para usar com higienizador anal.",
         alternativas: [
             {
-                texto: "Utiliza uma ferramenta de busca na internet que utiliza IA para que ela ajude a encontrar informações relevantes para o trabalho e explique numa linguagem que facilite o entendimento.",
-                afirmacao: "Conseguiu utilizar a IA para buscar informações úteis."
+                texto: "Usar mato mistrioso",
+                afirmacao: "Conseguiu utilizar um mato para contribuir com sua higiene (era Urtigão)."
             },
             {
-                texto: "Escreve o trabalho com base nas conversas que teve com colegas, algumas pesquisas na internet e conhecimentos próprios sobre o tema.",
-                afirmacao: "Sentiu mais facilidade em utilizar seus próprios recursos para escrever seu trabalho."
+                texto: "Dois reais",
+                afirmacao: "Preferiu dois reais ao mato misterioso, mas ainda assim era o unico recurso disponível para seu asseio."
             }
         ]
     },
     {
-        enunciado: "Após a elaboração do trabalho escrito, a professora realizou um debate entre a turma para entender como foi realizada a pesquisa e escrita. Nessa conversa também foi levantado um ponto muito importante: como a IA impacta o trabalho do futuro. Nesse debate, como você se posiciona?",
+        enunciado: "Apos limpar com a Urtiga, percebe bolas vermelhas em sua superficie pélvica, o que ele deve fazer?",
         alternativas: [
             {
-                texto: "Defende a ideia de que a IA pode criar novas oportunidades de emprego e melhorar habilidades humanas.",
-                afirmacao: "Vem impulsionando a inovação na área de IA e luta para abrir novos caminhos profissionais com IA."
+                texto: "Mostrar para alguem que possivelmente sabe o que é.",
+                afirmacao: "Decide apresentar os ematomas de seu anus em publico, mas ninguem pode ajudá-lo, então decide ir para casa."
             },
             {
-                texto: "Me preocupo com as pessoas que perderão seus empregos para máquinas e defendem a importância de proteger os trabalhadores.",
-                afirmacao: "Sua preocupação com as pessoas motivou a criar um grupo de estudos entre trabalhadores para discutir meios de utilização de IA de forma ética."
+                texto: "Conviver com isso pelo resto da vida",
+                afirmacao: "Quando percebe os ematomas da Urtiga, acredita que precisa conviver com isso pelo resto de sua vida, e volta para casa ja conformado com o destino."
             }
         ]
     },
     {
-        enunciado: "Ao final da discussão, você precisou criar uma imagem no computador que representasse o que pensa sobre IA. E agora?",
+        enunciado: "João decidiu não ir para o hospital, o que ele precisa fazer ?",
         alternativas: [
             {
-                texto: "Criar uma imagem utilizando uma plataforma de design como o Paint.",
+                texto: "Jogar Clash Royale com o objetivo de upar de arena",
                 afirmacao: "Notou também que muitas pessoas não sabem ainda utilizar as ferramentas tradicionais e decidiu compartilhar seus conhecimentos de design utilizando ferramentas de pintura digital para iniciantes."
             },
             {
@@ -78,36 +78,10 @@ let perguntaAtual;
 let historiaFinal = "";
 
 function mostraPergunta() {
-    if (atual >= perguntas.length) {
-        mostraResultado();
-        return;
-    }
     perguntaAtual = perguntas[atual];
     caixaPerguntas.textContent = perguntaAtual.enunciado;
-    caixaAlternativas.textContent = "";
-    mostraAlternativas();
 }
 
-function mostraAlternativas(){
-    for(const alternativa of perguntaAtual.alternativas) {
-        const botaoAlternativas = document.createElement("button");
-        botaoAlternativas.textContent = alternativa.texto;
-        botaoAlternativas.addEventListener("click", () => respostaSelecionada(alternativa));
-        caixaAlternativas.appendChild(botaoAlternativas);
-    }
-}
 
-function respostaSelecionada(opcaoSelecionada) {
-    const afirmacoes = opcaoSelecionada.afirmacao;
-    historiaFinal += afirmacoes + " ";
-    atual++;
-    mostraPergunta();
-}
-
-function mostraResultado() {
-    caixaPerguntas.textContent = "Em 2049...";
-    textoResultado.textContent = historiaFinal;
-    caixaAlternativas.textContent = "";
-}
 
 mostraPergunta();
