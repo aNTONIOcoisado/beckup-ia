@@ -110,7 +110,7 @@ function respostaSelecionada(opcaoSelecionada) {
 }
 
 function mostraResultado() {
-    caixaPerguntas.textContent = "Em 2049...";
+    caixaPerguntas.textContent = "Depois de cagar no rio...";
     textoResultado.textContent = historiaFinal;
     caixaAlternativas.textContent = "";
 }
